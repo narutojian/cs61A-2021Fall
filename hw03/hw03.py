@@ -173,14 +173,7 @@ def count_coins(change):
             return 0
         if change == 0:
             return 1
-        if change<max_coin:
-            return count_inner(change,descending_coin(max_coin))
-        if change == 1:
-            if max_coin != 1:
-                return 0
-            else:
-                return 1
-        if max_coin == 1:
+        if maxCoin == 1:
             return 1
         return count_inner(change-max_coin, max_coin)+count_inner(change,descending_coin(max_coin))
     return count_inner(change)
